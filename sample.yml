@@ -1,6 +1,5 @@
--name : My First Ansible Playbook
+-name: My First Playbook
   hosts: all
   tasks:
-  -name : print my Name
-      debug: 
-          msg: This is Nawaz
+    debug: 
+    msg: Hello Wold
