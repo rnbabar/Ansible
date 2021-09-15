@@ -1,7 +1,7 @@
--name: My second Playbook
+- name: My second Playbook
   hosts: 
     -all
   tasks:
+  - name: Print Message
     debug:
       msg: Hello Another world
-      
