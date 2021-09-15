@@ -1,6 +1,5 @@
 -name : My First Ansible Playbook
-  hosts: 
-   -all
+  hosts: all
   tasks:
     -name : print my Name
         debug: 
