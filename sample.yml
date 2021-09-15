@@ -4,4 +4,4 @@
   - name: print message
     debug: 
       msg: Hello Wold
-  roles: data01
+  
