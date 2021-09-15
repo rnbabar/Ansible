@@ -3,4 +3,4 @@
   tasks:
   - name: print message
     debug: 
-    msg: Hello Wold
+      msg: Hello Wold
