@@ -1,11 +1,9 @@
 - name: My second Playbook
-    hosts: 
-        - all
+    hosts: all
     tasks:
     - name: Print Message
       debug:
         msg: Hello Another world
-    roles:
-        - sample
+    roles: sample
 
 
