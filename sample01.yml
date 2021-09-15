@@ -6,6 +6,6 @@
     debug:
       msg: Hello Another world
   roles:
-      -sample
+    -sample
 
 
