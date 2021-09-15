@@ -5,7 +5,7 @@
   - name: Print Message
     debug:
       msg: Hello Another world
-  - roles:
+  roles:
       -sample
 
 
