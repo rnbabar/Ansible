@@ -1,7 +1,9 @@
 #! bin/bash
 INST=("frontend" "catalogue"  "mongodb" "user" "cart" "shipping" "rabbitmq" "payment" "mysql" "redis")
-for i in {0..9}
+for i in {0..1}
 do
-echo -e "Instance Name ="  ${INST[$i]} |tr '[a-z]' '[A-Z]'
+mkdir  /Ansible/ansible/${INST[$i]} 
+mkdir /Ansible/ansible/${INST[$i]}/tasks
+touch /Ansible/ansible/${INST[$i]}/tasks/main.yml
 done
 
