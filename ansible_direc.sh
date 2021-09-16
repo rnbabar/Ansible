@@ -1,5 +1,7 @@
 #! bin/bash
-INST=("frontend" "catalogue")
-echo -e "\n Fisrt ="${INST[0]}
-echo -e "\n Fisrt ="${INST[1]}
+INST=("frontend" "catalogue"  "mongodb" "user" "cart" "shipping" "rabbitmq" "payment" "mysql" "redis")
+for i in {0 .. 9};
+do
+echo -e "\n IInstance Name ="${INST[$i]}
+done
 
