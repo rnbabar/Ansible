@@ -1,8 +1,6 @@
 # Test 
--name : Test
-    debug:
-        msg: Main Menu
-        
+
+
 - name: RoboShop Project Setup - Frontend
   hosts: FRONTEND
   tags: frontend
