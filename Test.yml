@@ -1,0 +1,9 @@
+--- 
+- 
+  become: true
+  hosts: FRONTEND
+  name: "RoboShop Project Setup - Frontend"
+  roles: |-
+      frontend
+      - name:RoboShop Project Setup - MongoDB hosts:MONGODB tags:mongodb become:yes roles:mongodb
+  tags: frontend

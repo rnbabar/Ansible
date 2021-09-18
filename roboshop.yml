@@ -37,8 +37,7 @@
     hosts: CART
     tags: cart
     become: yes
-    roles:
-        - cart
+    roles: cart
 
     - name: RoboShop Project Setup - MySQL
     hosts: MYSQL
