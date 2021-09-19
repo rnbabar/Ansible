@@ -10,7 +10,7 @@
 - name: create roboshop user
   user:
     name: roboshop
-    register: ROBOSHOP_USER
+  register: ROBOSHOP_USER
     
 - name: Download catalogue application from gitub
   ansible.builtin.unarchive:
