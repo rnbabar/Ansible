@@ -14,11 +14,12 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'  
 
-- name: Start Mongodb service
+- name: Start MongoDB Service
   systemd:
     name: mongod
     state: started
-    enable: yes
+    enabled: yes
+
 
 - name: Download the schema of mongodb
   ansible.builtin.unarchive:
