@@ -16,7 +16,7 @@
 
 - name: Start Mongodb service
   systemd:
-    name: mongod
+    name: mongodb
     state: started
     enable: yes
 
