@@ -16,6 +16,6 @@
 - name: Restart the redis service
   systemd:
     name: redis
-    enbaled: yes
+    enabled: yes
     state: started
     
