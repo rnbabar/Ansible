@@ -1,0 +1,49 @@
+- name: Install nodejs
+  yum:
+    name: 
+        - nodejs
+        - make
+        - gcc-c++
+    state: present
+
+- name: Add roboshop user
+  user:
+    name: roboshop
+  register: ROBOSHOP_USER
+
+- name: download the user application from github
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/user/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+
+- name: Remove the old data
+  ansible.builtin.file:
+    path: /home/roboshop/user
+    state: absent
+
+- name: Copy the user application files to roboshop
+  ansible.builtin.copy:
+    src: /tmp/user-main/
+    dest: /home/roboshop/user/
+    remote_src: yes
+    owner: roboshop
+    group: roboshop
+
+- name: install the npm package, dependencies
+  community.general.npm:
+    path: /home/roboshop/user
+    become_user: roboshop
+
+- name: copy the systemd.service to user.service
+  ansible.builtin.copy:
+    src: systemd.service
+    dest: /etc/systemd/system/user.service
+
+- name: start the user.service
+  systemd:
+    name: user
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
+    
