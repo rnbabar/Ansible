@@ -30,10 +30,12 @@
     owner: roboshop
     group: roboshop
 
+
+
 - name: install the npm package, dependencies
   community.general.npm:
     path: /home/roboshop/user
-    become_user: roboshop
+  become_user: roboshop
 
 - name: copy the systemd.service to user.service
   ansible.builtin.copy:
