@@ -34,7 +34,7 @@
 
 - name: Run a user file containing MongoDB 
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/user.js"
+    file: "/tmp/mongodb-main/users.js"
     idempotent: yes
 
 
