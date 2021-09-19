@@ -1,33 +1,33 @@
--name : To install Nginx
-    yum:
-        name : nginx
-        state : present
+- name: Install Nginx
+  yum:
+    name: nginx
+    state: present
 
-- name: download data from the github
-    ansible.builtin.unarchive:
-        src: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-        dest: /tmp
-        remote_src: yes
+- name: Download Frontend Archive
+  ansible.builtin.unarchive:
+    src: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
 
--name: Remove nginx default files from its location
-    ansible.builtin.file:
-        path: /user/share/nginx/html
-        state : absent
+- name: Remove old content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
 
--name: copy the unzip files to 
-    ansible.buitin.copy:
-        src : /temp/frontend-main/static/
-        dest : /user/share/nginx/html/
-        remote_src : yes
+- name: Copy Extracted Content to Nginx Path
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
 
--name : Copy roboshop config file
-    ansible.builtin.copy :
-        src : roboshop.conf
-        dest : /etc/nginx/default.d/roboshop.conf
+- name: Copy RoboShop Config file
+  copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
--name : Restart the Nginx service
-    systemd :
-        name : nginx
-        state : restarted 
-        enable : yes
+- name: Restart Nginx
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
 
