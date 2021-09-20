@@ -1,9 +1,9 @@
-- name: install Nodejs
-   yum: 
-    name:
-     - nodejs
-     - make
-     - gcc-c++
+- name: Install nodejs
+  yum:
+    name: 
+        - nodejs
+        - make
+        - gcc-c++
     state: present
 
 - name: create roboshop user
