@@ -8,12 +8,14 @@
     name: mariadb-libs
     state: absent
 
-- name: Install mysql
+
+- name: Install MySQL Serverr
   yum:
-    name: 
+    name:
       - mysql-community-server
-       - MySQL-python
+      - MySQL-python
     state: present
+
 
 - name: Start mysql 
   systemd:
