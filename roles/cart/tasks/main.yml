@@ -35,7 +35,7 @@
 
 - name: install npm package
   community.general.npm:
-    path: home/roboshop/cart/
+    path: home/roboshop/cart
     become_user: roboshop
 
 - name:  copy the systemd.service to cart.service
