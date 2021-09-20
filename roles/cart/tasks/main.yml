@@ -19,7 +19,7 @@
 
 - name: Remove the existing data if any
   ansible.builtin.file:
-    path: /home/roboshop
+    path: /home/roboshop/cart
     state: absent
 
 - name: Copy data to roboshop user directory
