@@ -1,0 +1,15 @@
+- name: Create a mysql repository
+  copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: Remove the mariadb lib
+  yum:
+    name: mariadb-libs
+    state: absent
+
+- name: Create a repository
+  yum:
+    name: mysql-community-server
+    state: present
+
