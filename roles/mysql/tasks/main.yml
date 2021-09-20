@@ -8,8 +8,14 @@
     name: mariadb-libs
     state: absent
 
-- name: Create a repository
+- name: Install mysql
   yum:
     name: mysql-community-server
     state: present
+
+- name: Start mysql 
+  systemd:
+    name: mysql
+    state: started
+    enabled: yes
 
