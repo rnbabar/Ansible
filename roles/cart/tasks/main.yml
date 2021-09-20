@@ -25,7 +25,7 @@
 - name: Copy data to roboshop user directory
   ansible.builtin.copy:
     src: /tmp/cart-main/
-    dest: /home/roboshop/cart/
+    dest: /home/roboshop/cart
     remote_src: yes
     user: roboshop
     group: roboshop
