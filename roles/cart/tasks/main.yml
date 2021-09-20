@@ -22,13 +22,16 @@
     path: /home/roboshop/cart
     state: absent
 
-- name: Copy data to roboshop user directory
+
+
+- name: Copy the user application files to roboshop
   ansible.builtin.copy:
     src: /tmp/cart-main/
-    dest: /home/roboshop/cart
+    dest: /home/roboshop/cart/
     remote_src: yes
-    user: roboshop
+    owner: roboshop
     group: roboshop
+
 
 - name: install npm package
   community.general.npm:
