@@ -1,0 +1,78 @@
+- name: RoboShop Project Setup - Frontend
+  hosts: FRONTEND
+  tags: frontend
+  become: yes
+  roles:
+    - frontend
+
+- name: RoboShop Project Setup - MongoDB
+  hosts: MONGODB
+  tags: mongodb
+  become: yes
+  roles:
+    - mongodb
+
+- name: RoboShop Project Setup - Catalogue
+  hosts: CATALOGUE
+  tags: catalogue
+  become: yes
+  roles:
+    - catalogue
+
+- name: RoboShop Project Setup - Redis
+  hosts: REDIS
+  tags: redis
+  become: yes
+  roles:
+    - redis
+
+- name: RoboShop Project Setup - User
+  hosts: USER
+  tags: user
+  become: yes
+  roles:
+    - user
+
+- name: RoboShop Project Setup - Cart
+  hosts: CART
+  tags: cart
+  become: yes
+  roles:
+    - cart
+
+- name: RoboShop Project Setup - MySQL
+  hosts: MYSQL
+  tags: mysql
+  become: yes
+  roles:
+    - mysql
+
+- name: RoboShop Project Setup - Shipping
+  hosts: SHIPPING
+  tags: shipping
+  become: yes
+  roles:
+    - shipping
+
+- name: RoboShop Project Setup - RabbitMQ
+  hosts: RABBITMQ
+  tags: rabbitmq
+  become: yes
+  roles:
+    - rabbitmq
+
+- name: RoboShop Project Setup - Payment
+  hosts: PAYMENT
+  tags: payment
+  become: yes
+  roles:
+    - payment
+
+- name: pull approach for roboshop
+  hosts: localhost
+  become: yes
+  roles:
+       - role: "{{ROLE}}"
+         when: ROLE is defined
+
+         

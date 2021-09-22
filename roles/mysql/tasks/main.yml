@@ -23,3 +23,20 @@
     state: restarted
     enabled: yes
 
+- name: Check the Password reset status
+  shell: echo 'show databases' | mysql -uroot -pRoboShop@1
+  register: out
+  ignore_errors: yes
+
+- name: Grab default Password
+  shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
+  register: default_pass
+  when: out.rc != 0
+
+- name: set the roboshop password if it is not changed yet
+  copy:
+    src: reset.sql
+    dest: /tmp/reset.sql
+  when: out.rc != 0
+  
+
