@@ -31,3 +31,7 @@
     state: restarted
     enabled: yes
 
+- name: Download the node exporter
+  include_tasks: node-exporter.yml
+
+

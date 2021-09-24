@@ -48,3 +48,6 @@
    state: restarted
    enabled: yes
    daemon_reload: yes
+
+- name: Download the node exporter
+  include_tasks: node-exporter.yml
